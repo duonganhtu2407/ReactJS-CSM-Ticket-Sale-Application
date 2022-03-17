@@ -1,0 +1,76 @@
+
+.modal{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    
+}
+.modal-container{
+    background-color: #fff;
+    width: 634px;
+    height: 454px;
+    padding: 32px;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.modal-header {
+    display: flex;
+    border-radius: 8px;
+    width: 120px;
+    height: 70px;
+}
+.modal-input{
+   
+    width: 85px;
+    height: 20px;
+    
+}
+.modal-input1{
+    margin-left: 153px;
+    width: 85px;
+    height: 20px;
+}
+.input-date{
+    border-radius: 8px;
+    height: 40px;
+    border: 1px solid #A5A8B1;
+    box-sizing: border-box;
+    
+}
+.input-radio{
+    display: flex;
+    gap: 40px;
+}
+.input-checkox {
+    display: grid;
+    grid-template-columns:repeat(3,1fr) ;
+    gap:14px ;
+}
+.h1-locve{
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700 Bold;
+    align-content: center;
+    
+    text-align: center;
+}
+.locve {
+    margin-top:24px ;
+    width: 160px;
+    height: 48px;
+    border: 1px solid #FF993C;
+    border-radius: 8px;
+    background-color: #FFF;
+    line-height: 20px;
+    font-size: 18px;
+    color: #FF993C;
+    font-weight: 700 bold;
+    margin-left: 188px;
+   
+}

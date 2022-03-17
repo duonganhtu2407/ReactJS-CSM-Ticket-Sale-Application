@@ -1,0 +1,104 @@
+.content {
+    display: flex;
+    
+}
+.content-soatve {
+    width: 1100px;
+}
+.btn-chotsoatve{
+    width: 120px;
+    height: 48px;
+    background-color: #FF993C;
+    color: #fff;
+    margin-left: -102px;
+    border-color: #FF993C;
+    border-radius:5px ;
+}
+.modal-locve {
+    margin-left: 20px;
+    width: 100%;
+    background: #fff;
+    height: 755px;
+    
+}
+h2 {
+    font-size: 26px;
+    margin-right: 375px;
+    font-family:Montserrat ;
+}
+p {
+    font-size: 20px;
+    margin-left: 16px;
+}
+.modal-soatve{
+    display: flex;
+    position: absolute;
+}
+.input-soatve {
+    font-family:Montserrat ;
+    font-size: 16px;
+    text-align: left;
+    align-items: center;
+    position: static;
+    flex: none;
+    margin-top: 8px;
+    margin-left: 60px;
+    
+}
+.input-radio{
+    padding-bottom: 10px;
+    font-size: 16px;
+}
+.loaive {
+    width:100%;
+    margin-top: 120px;
+    display: flex;
+    height: 50px;  
+}
+
+.span-loaive{
+    margin-left: 157px;
+    margin-top: 7px;
+}
+.tungay {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    
+    
+}
+.label-tungay{
+    margin-right: 172px;
+    margin-left: 15px;
+}
+.label-ngayden {
+    text-align: center;
+    margin-right: 161px;
+    margin-left: 15px;
+}
+.ngayden{
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    
+}
+.input-date{
+    height: 40px;
+    border-radius: 8px;
+    background-color: #E0E0E0;
+}
+.loc {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+}
+.btn-loc{
+    height: 40px;
+    width: 100px;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #FF993C;
+    border-color: #FF993C;
+    margin-left: 140px;
+}

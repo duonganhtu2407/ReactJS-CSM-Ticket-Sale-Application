@@ -1,0 +1,125 @@
+.ticket {
+     font-family: Montserrat;
+     font-weight: 500, Medium;
+     font-size: 18px;
+     line-height: 26px;
+     font-size: normal;
+}
+/* .menu-items :hover {
+    background-color:#FFB800 ;
+    color: #fff;
+} */
+
+
+.logo {
+    background-image: url(../image/insight.png);
+    height: 58px;
+    width: 133px;
+    background-repeat: no-repeat ;
+    margin-top:10px ;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+.ant-layout {
+    height: 60px;
+}
+.header-layout {
+    display: flex;
+    height: 58px;
+    width: 100%;
+    background:#E5E5E5 ;
+}
+.input-header{
+    height: 48px;
+    width: 470px;
+    margin: 5px;
+    background:#EDEDED ;
+    border-radius: 12px;
+    font-style: italic;
+    position: relative;
+    
+}
+.menu-search{
+    background:#EDEDED ;
+    margin-left: 385px;
+    position: absolute;
+    margin-top: 10px;
+    height: 30px;
+    
+    
+}
+.menu-icon{
+    display: flex;
+    margin-left: 1010px;
+    background:#E5E5E5 ;
+    
+}
+.h1-style {
+    text-align: justify;
+}
+.content-item {
+    display: flex;
+}
+.input-context {
+    height: 48px;
+    width: 446px;
+    background: #F7F7F8;
+    border-radius: 8px;
+    flex-direction: row;
+    align-items: center;
+    font-style: italic;
+    padding: 10px 16px;
+}
+.content-menu {
+    margin-left: 900px;
+    color: #FF993C;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    
+    
+}
+.btn-locve{
+    height: 48px;
+    margin-right: 10px;
+    border-radius: 5px ;
+    border-color: #FF993C;
+    
+}
+.btn-xuatve{
+    height: 48px;
+    border-radius: 5px ;
+    border-color: #FF993C;
+}
+.site-layout-background{
+    margin-top: 15px;
+    
+}
+.ant-menu-light .ant-menu-item :hover {
+    color: #FF993C;
+}
+.ant-menu-item-selected {
+    color: #FF993C;
+}
+::selection {
+    background: #FF993C;
+}
+.ant-layout-sider-trigger{
+    background: #E5E5E5 ;
+}
+.ant-table-pagination.ant-pagination {
+    justify-content: center;
+    color: #FF993C;
+    opacity: 0.7;
+    color: #FF993C;
+}
+.ant-pagination-item:hover{
+    border-color: #FF993C;
+}
+.ant-pagination-item-active {
+    border-color: #FF993C;
+    color: #FF993C;
+}
+.ant-select-single .ant-select-selector{
+    display: none;
+}
