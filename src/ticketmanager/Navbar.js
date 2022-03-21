@@ -4,10 +4,9 @@ import {
   } from '@ant-design/icons';
   import { Layout, Menu } from 'antd';
   import React, { Component } from 'react';
-  import TableView from './TableView';
   import "./Tickets.css";
   import {NavLink} from "react-router-dom"
-import { CHANGE_TICKET_PATH, TICKET_PATH } from './routes';
+import { CHANGE_TICKET_PATH, SERVICE_PATH, TICKET_PATH } from './routes';
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -24,7 +23,7 @@ export default class Navbar extends Component {
   render() {
     const { collapsed } = this.state;
     return (
-        <Layout style={{ minHeight: '100vh', }} >
+        <Layout style={{ minHeight: '100vh', }} className="navbar-style" >
         <Sider className='ticket' collapsible collapsed={collapsed} onCollapse={this.onCollapse} style={{ background: "#E5E5E5",}} >
          <div className='logo'></div>
           <Menu className='menu-items' style={{ background: "#E5E5E5"}} defaultSelectedKeys={['2']} mode="inline">
@@ -38,7 +37,9 @@ export default class Navbar extends Component {
               <NavLink to={CHANGE_TICKET_PATH}>Đối soát vé</NavLink>
             </Menu.Item>
             <SubMenu key="sub2" icon={<SettingOutlined />} title="Gói cài đặt">
-              <Menu.Item key="4">Gói dịch vụ </Menu.Item>
+              <Menu.Item key="4"> 
+              <NavLink to={SERVICE_PATH}>Gói dịch vụ</NavLink>
+              </Menu.Item>
             </SubMenu>     
           </Menu>
         </Sider>

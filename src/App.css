@@ -39,3 +39,15 @@ body {
     transform: rotate(360deg);
   }
 }
+/* .layer{
+  z-index: 2;
+  width: 100%;
+  background-color: #EDEDED;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+.navbar-style{
+  /* position: relative; */
+}

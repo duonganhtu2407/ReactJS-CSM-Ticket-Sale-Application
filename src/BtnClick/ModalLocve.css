@@ -9,6 +9,7 @@
     left: 0;
     right: 0;
     z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
     
 }
 .modal-container{
@@ -17,6 +18,8 @@
     height: 454px;
     padding: 32px;
     font-family: 'Montserrat', sans-serif;
+    border-radius: 16px;
+    animation: modalLocve ease .5s;
     
 }
 .modal-header {
@@ -37,11 +40,9 @@
     height: 20px;
 }
 .input-date{
-    border-radius: 8px;
     height: 40px;
-    border: 1px solid #A5A8B1;
-    box-sizing: border-box;
-    
+    border-radius: 8px;
+    background-color: #fff;
 }
 .input-radio{
     display: flex;
@@ -73,4 +74,14 @@
     font-weight: 700 bold;
     margin-left: 188px;
    
+}
+@keyframes modalLocve {
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -16,36 +16,24 @@ const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 
-const handleOpenModal = () => {
-    
-}
-export class Tickets extends Component {
-  state = {
-    collapsed: false,
-  };
-
-  onCollapse = collapsed => {
-    console.log(collapsed);
-    this.setState({ collapsed });
-  };
-  render() {
-    const { collapsed } = this.state;
-    return (
-      <Content style={{ margin: '0 16px' }}>
-        <h2 className='h1-style'>Danh sách vé</h2>
-        <div className='content-item'>
-          <input className='input-context' type="text" placeholder='tìm bằng số vé' />
-          <div className='content-menu'>
-            <button className='btn-locve' onClick={handleOpenModal} >Lọc vé</button>
-            <button className='btn-xuatve'>Xuất file(.cvs)</button>
-          </div>
-        </div>
-        <div className="site-layout-background" >
-          <TableView />  
-        </div>
-      </Content>
-    )
+export default function Tickets(props) {
+  const handleOpenModal = () => {
+    props.openshow()
   }
+  return (
+    <Content style={{ margin: '0 16px' }}>
+      <h2 className='h1-style'>Danh sách vé</h2>
+      <div className='content-item'>
+        <input className='input-context' type="text" placeholder='tìm bằng số vé' />
+        <div className='content-menu'>
+          <button className='btn-locve' onClick={handleOpenModal} >Lọc vé</button>
+          <button className='btn-xuatve'>Xuất file(.cvs)</button>
+        </div>
+      </div>
+      <div className="site-layout-background" >
+        <TableView />
+        
+      </div>
+    </Content>
+  )
 }
-
-export default Tickets

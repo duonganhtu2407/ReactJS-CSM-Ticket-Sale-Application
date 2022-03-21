@@ -1,0 +1,27 @@
+.content-menu-service {
+    width: 100%;
+    display: flex;
+    
+}
+.btn-xuatfile {
+    margin-left: 1010px;
+    margin-right: 16px;
+    border-radius: 8px ;
+    border: 2px solid #FF993C;
+    background-color: #ECECEC;
+    color: #FF993C;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    width: 170px;
+}
+.btn-them{
+    border-radius: 8px ;
+    border: 2px solid #FF993C;
+    background-color: #ECECEC;
+    color: #FF993C;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 500;
+    width: 170px;
+}

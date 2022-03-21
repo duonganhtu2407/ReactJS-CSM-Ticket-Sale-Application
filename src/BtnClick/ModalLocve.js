@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 import "./ModalLocve.css"
 
-export default class ModalLocve extends Component {
-    render() {
-        return (
-            <div className='modal'>
-                <div className='modal-container'>
+
+
+export default function ModalLocve(props) {
+    const handleCloseShow = () => {
+        props.closeshow()
+    }
+    
+  return (
+    <div className='modal'>
+                <div className='modal-container js-modal-container'>
                     <h1 className='h1-locve'>Lọc vé</h1>
                     <div className='modal-header'>
                         <div className='modal-input'>
@@ -20,10 +25,10 @@ export default class ModalLocve extends Component {
                     <div className='modal-content'>
                         <label>Tình trạng sử dụng</label>
                         <div className='input-radio'>
-                            <div><input type='radio' /> Tất cả</div>
-                            <div><input type='radio' /> Đã sử dụng</div>
-                            <div><input type='radio' /> Chưa sử dụng</div>
-                            <div><input type='radio' /> Hết hạn</div>
+                            <div><input type='radio' name='radio'/> Tất cả</div>
+                            <div><input type='radio' name='radio'/> Đã sử dụng</div>
+                            <div><input type='radio' name='radio'/> Chưa sử dụng</div>
+                            <div><input type='radio' name='radio'/> Hết hạn</div>
                         </div>
                     </div>
                     <div className='modal-footer'>
@@ -33,18 +38,15 @@ export default class ModalLocve extends Component {
                             <div><input type="checkbox" />Tất cả</div>
                             <div><input type="checkbox" />Cổng 1</div>
                             <div><input type="checkbox" />Cổng 2</div>
-
-
                             <div><input type="checkbox" />Cổng 3</div>
                             <div><input type="checkbox" />Cổng 4</div>
                             <div><input type="checkbox" />Cổng 5</div>
 
                         </div>
                     </div>
-                    <button className='locve'>Lọc</button>
+                    <button className='locve' onClick={handleCloseShow}>Lọc</button>
                 </div>
-
             </div>
-        )
-    }
+  )
 }
+

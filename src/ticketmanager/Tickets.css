@@ -59,6 +59,7 @@
 }
 .content-item {
     display: flex;
+    
 }
 .input-context {
     height: 48px;
@@ -106,6 +107,7 @@
 }
 .ant-layout-sider-trigger{
     background: #E5E5E5 ;
+    display: none;
 }
 .ant-table-pagination.ant-pagination {
     justify-content: center;
@@ -122,4 +124,17 @@
 }
 .ant-select-single .ant-select-selector{
     display: none;
+}
+.ant-menu-item{
+    font-weight: 700;
+}
+.ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* border-right: 3px solid #1890ff; */
+    transform: scaleY(0.0001);
+    opacity: 0;
+    content: '';
 }
