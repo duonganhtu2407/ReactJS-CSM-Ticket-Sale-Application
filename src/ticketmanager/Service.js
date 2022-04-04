@@ -12,9 +12,9 @@ import TableService from './TableService';
   
   
   export default function Service(props) {
-    // const handleOpenModal = () => {
-    //   props.openshow()
-    // }
+    const handleOpenModelThem = () => {
+      props.openshowthem()
+    }
     return (
       <Content style={{ margin: '0 16px' }}>
         <h2 className='h1-style'>Danh sách gói dịch vụ</h2>
@@ -22,7 +22,7 @@ import TableService from './TableService';
           <input className='input-context' type="text" placeholder='tìm bằng số vé' />
           <div className='content-menu-service'>
             <button className='btn-xuatfile'>Xuất file(.cvs)</button>
-            <button className='btn-them' onClick="" >Thêm gói vé</button>
+            <button className='btn-them' onClick={handleOpenModelThem} >Thêm gói vé</button>
           </div>
         </div>
         <div className="site-layout-background" >   

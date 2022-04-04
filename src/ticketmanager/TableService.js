@@ -45,11 +45,11 @@ const columns = [
         title: 'Giá combo(VNĐ/Combo)',
         dataIndex: 'giacombo',
         key: '4',
-        width: 150,
+        width: 200,
     },
     {
         title: 'Tình trạng',
-        dataIndex: 'address',
+        dataIndex: 'tinhtrang',
         key: '7',
         width: 150,
     },
@@ -72,6 +72,7 @@ for (let i = 1; i < 50; i++) {
         giatien: `50.000 VNĐ`,
         giacombo:`360.000 VNĐ`,
         capnhat:`Cập nhật`,
+        tinhtrang:`Đã sử dụng`
     });
 }
 const TableService = () => {

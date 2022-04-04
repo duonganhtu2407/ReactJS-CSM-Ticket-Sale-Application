@@ -6,7 +6,7 @@ import {
   import React, { Component } from 'react';
   import "./Tickets.css";
   import {NavLink} from "react-router-dom"
-import { CHANGE_TICKET_PATH, SERVICE_PATH, TICKET_PATH } from './routes';
+import { CHANGE_TICKET_PATH, HOME_PATH, SERVICE_PATH, TICKET_PATH } from './routes';
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -28,7 +28,7 @@ export default class Navbar extends Component {
          <div className='logo'></div>
           <Menu className='menu-items' style={{ background: "#E5E5E5"}} defaultSelectedKeys={['2']} mode="inline">
             <Menu.Item key="1" icon={<HomeOutlined />}>
-              Trang Chủ
+            <NavLink to={HOME_PATH}>Trang Chủ</NavLink>
             </Menu.Item>
             <Menu.Item key="2" icon={<CreditCardOutlined />} >
               <NavLink to={TICKET_PATH} exact={true}>Quản lý vé</NavLink>

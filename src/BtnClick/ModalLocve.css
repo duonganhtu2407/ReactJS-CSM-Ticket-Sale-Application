@@ -1,4 +1,9 @@
 
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .modal{
     position: fixed;
     display: flex;
@@ -34,6 +39,7 @@
     height: 20px;
     
 }
+
 .modal-input1{
     margin-left: 153px;
     width: 85px;
@@ -43,6 +49,10 @@
     height: 40px;
     border-radius: 8px;
     background-color: #fff;
+}
+::-webkit-calendar-picker-indicator{
+   background-color: #fff;
+   color: #FF993C;
 }
 .input-radio{
     display: flex;
@@ -84,4 +94,39 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+input[type="radio"]{
+    display: none;
+}
+.custom {
+    position: relative;
+    cursor: pointer;
+}
+.custom:nth-last-child(1) {
+    padding-right: 0;
+}
+.custom::before {
+    content: "";
+    border: 2px solid #27AEF9;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+.custom::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(34, 34, 34, 0);
+    left: 4px;
+    top: 14px;
+    margin: -8px 20px;
+    margin-left: 0;
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+input[type="radio"]:checked + .custom::after{
+    background: rgba(34, 34, 34, 1);
 }

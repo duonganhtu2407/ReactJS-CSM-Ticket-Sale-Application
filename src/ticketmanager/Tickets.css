@@ -138,3 +138,7 @@
     opacity: 0;
     content: '';
 }
+.submenu-title {
+    height: 38px;
+    line-height: 40px;
+}

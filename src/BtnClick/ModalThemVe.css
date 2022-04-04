@@ -1,0 +1,104 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+.modal {
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+}
+.modal-themve {
+    position: fixed;
+    background-color: #EDEDED;
+    padding: 16px;
+    width: 636px;
+    height: 454px;
+    animation: modalLocve ease .5s;
+}
+H1 {
+    text-align: center;
+    
+}
+.input-tengoive{
+    border-radius: 8px;
+    width: 250px;
+    border: 1px solid #E5E5E5;
+}
+.modal-date{
+    display: flex;
+    margin-top: 16px;
+}
+.input-date-ngay {
+    width: 129px;
+    border-radius: 5px;
+    border: 1px solid #E5E5E5;
+}
+.input-date-han {
+    width: 129px;
+    border-radius: 5px;
+    border: 1px solid #E5E5E5;
+}
+.input-date-time {
+    border-radius: 5px;
+    border: 1px solid #E5E5E5;
+}
+.modal-date-input-2 {
+    margin-left: 32px;
+}
+.modal-giave {
+    margin-top: 16px;
+}
+.input-giave {
+    width: 148px;
+    border-radius: 5px;
+    border: 1px solid #E5E5E5;
+}
+.input-giave2 {
+    width: 100px;
+    border-radius: 5px;
+    border: 1px solid #E5E5E5;
+}
+.modal-tinhtrang {
+    margin-top: 16px;
+    
+}
+.modal-btn {
+    margin-top: 16px;
+    text-align: center;
+
+}
+.btn-huy {
+    width: 100px;
+    height: 35px;
+    border: 1px solid #FF993C ;
+    background-color: white;
+    color: #FF993C;
+    border-radius: 5px;
+    margin-right: 8px;
+}
+.btn-luu {
+    width: 100px;
+    height: 35px;
+    border: 1px solid #FF993C ;
+    background-color: #FF993C;
+    color: white;
+    border-radius: 5px;
+    margin-left: 8px;
+}
+@keyframes modalLocve {
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+span{
+    color: red;
+}
