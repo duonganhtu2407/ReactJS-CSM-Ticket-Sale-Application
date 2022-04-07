@@ -1,48 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from "react-dom"
 import {Area} from '@ant-design/plots'
+import './HomePage.css'
 export default function HomeCharts() {
     
-        const data2 = [
-         {
-            day: "Thu 2",
-            value: "140tr"
-         },
-         {
-            day: "Thu 3",
-            value: "180tr"
-         },
-         {
-            day: "Thu 4",
-            value: "190tr"
-         },
-         {
-            day: "Thu 5",
-            value: "230tr"
-         },
-         {
-            day: "Thu 6",
-            value: "220tr"
-         },
-         {
-            value: "250tr"
-         },
-         {
-            day: "Thu 7",
-            value: "210tr"
-         },
-         {
-            day: "CN",
-            value: "190tr"
-         },
-        ];
-        const [data, setData] = useState([]);
+        
+   const [data, setData] = useState([]);
 
     useEffect(() => {
         asyncFetch();
     }, []);
     const asyncFetch = () => {
-        fetch('http://localhost:3000/charts')
+        fetch('https://gw.alipayobjects.com/os/bmw-prod/360c3eae-0c73-46f0-a982-4746a6095010.json')
           .then((response) => response.json())
           .then((json) => setData(json))
           .catch((error) => {
@@ -50,19 +19,42 @@ export default function HomeCharts() {
           });
       };
       const config = {
-        data,
-        xField: 'day',
-        yField: 'value',
-        xAxis: {
-          range: [0, 1],
-        },
-      };
+         data,
+         xField: 'timePeriod',
+         yField: 'value',
+         xAxis: {
+           range: [0, 1],
+         },
+         smooth: true,
+         areaStyle: {
+           fill: 'l(270) 0:#ffffff 0.5:#fef3ed 1:#feede1',
+           fillOpacity: 0.7,
+           stroke: 'white',
+           lineWidth: 2,
+           strokeOpacity: 1,
+           shadowOffsetX: 10,
+           shadowOffsetY: 10,
+           cursor: 'pointer',
+         },
+         line: {
+           size: 3,
+         },
+         color: '#f7a156',
+       
+         
+       };
+       
 
     return (
         <div>
-            <h1>Thống kê</h1>
-            <h2>Doanh Thu</h2>
-            <Area {...config} />
+            <p className='p-thongke'>Thống kê</p>
+            <div className='div-doanhthu'>
+              <p className='p-doanhthu-p'>Doanh Thu</p>
+              <input className='input-title' type="date" value="2021-04-01" />
+            </div>
+            <div className='chart'>
+               <Area {...config} />
+            </div>
         </div>
     )
     

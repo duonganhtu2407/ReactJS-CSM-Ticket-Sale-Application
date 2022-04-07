@@ -142,3 +142,8 @@
     height: 38px;
     line-height: 40px;
 }
+span.ant-menu-title-content {
+    color: black;
+    font-weight: 700;
+}
+

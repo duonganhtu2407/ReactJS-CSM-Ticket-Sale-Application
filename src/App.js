@@ -1,3 +1,6 @@
+import React, {
+  Component
+} from 'react';
 import 'antd/dist/antd.css';
 import { useState } from 'react';
 import { Route, Routes } from "react-router";

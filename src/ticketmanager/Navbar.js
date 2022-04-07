@@ -36,9 +36,9 @@ export default class Navbar extends Component {
             <Menu.Item key="3" icon={<AuditOutlined />} >
               <NavLink to={CHANGE_TICKET_PATH}>Đối soát vé</NavLink>
             </Menu.Item>
-            <SubMenu key="sub2" icon={<SettingOutlined />} title="Gói cài đặt">
+            <SubMenu key="sub2" icon={<SettingOutlined />} title="Gói cài đặt" >
               <Menu.Item key="4"> 
-              <NavLink to={SERVICE_PATH}>Gói dịch vụ</NavLink>
+              <NavLink className="navlink" to={SERVICE_PATH}>Gói dịch vụ</NavLink>
               </Menu.Item>
             </SubMenu>     
           </Menu>
