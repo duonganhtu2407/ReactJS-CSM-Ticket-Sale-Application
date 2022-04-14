@@ -38,13 +38,12 @@ export default function ModalLocve(props) {
                         <label>Cổng Check-in</label>
                         <div className='input-checkox'>
 
-                            <div><input type="checkbox" />Tất cả</div>
-                            <div><input type="checkbox" />Cổng 1</div>
-                            <div><input type="checkbox" />Cổng 2</div>
-                            <div><input type="checkbox" />Cổng 3</div>
-                            <div><input type="checkbox" />Cổng 4</div>
-                            <div><input type="checkbox" />Cổng 5</div>
-
+                            <div><label><input className='checkbox-input' type="checkbox" /><span></span>Tất cả</label></div>
+                            <div><label><input className='checkbox-input' type="checkbox" /><span></span>Cổng 1</label></div>
+                            <div><label><input className='checkbox-input' type="checkbox" /><span></span>Cổng 2</label></div>
+                            <div><label><input className='checkbox-input' type="checkbox" /><span></span>Cổng 3</label></div>
+                            <div><label><input className='checkbox-input' type="checkbox" /><span></span>Cổng 4</label></div>
+                            <div><label><input className='checkbox-input' type="checkbox" /><span></span>Cổng 5</label></div>     
                         </div>
                     </div>
                     <button className='locve' onClick={handleCloseShow}>Lọc</button>

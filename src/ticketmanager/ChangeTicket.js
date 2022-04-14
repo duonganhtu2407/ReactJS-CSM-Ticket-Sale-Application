@@ -42,18 +42,18 @@ export class ChangeTicket extends Component {
                 <div className='modal-locve'>
                     <h2>Lọc vé</h2>
                     <div className='modal-soatve'>
-                        <p>Tình trạng soát vé</p>
+                        <p className='tinhtrang'>Tình trạng soát vé</p>
                         <div className='input-soatve'>
                             <div className='input-radio'>
-                                <label  className='custom'><input className='custom-input' type="radio" value="" name='locve' /><span></span>Tất cả</label>
+                                <label  className='custom'><input className='custom-input' type="radio" value="" name='locve' /><span className='margin-left' ></span>Tất cả</label>
 
                             </div>
                             <div className='input-radio'>
-                                <label className='custom'><input className='custom-input' type="radio" value="" name='locve'/><span></span>Đã đối soát</label>
+                                <label className='custom'><input className='custom-input' type="radio" value="" name='locve'/><span className='margin-left'></span>Đã đối soát</label>
 
                             </div>
                             <div className='input-radio'>
-                                <label className='custom'><input  className='custom-input'type="radio" value="" name='locve'/><span></span>Chưa đối soát</label>
+                                <label className='custom'><input  className='custom-input'type="radio" value="" name='locve'/><span className='margin-left'></span>Chưa đối soát</label>
 
                             </div>
                         </div>

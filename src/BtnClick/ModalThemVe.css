@@ -1,6 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
 .modal {
     align-items: center;
     justify-content: center;
@@ -11,6 +12,7 @@ body {
     z-index: 10;
     background: rgba(0, 0, 0, 0.4);
 }
+
 .modal-themve {
     position: fixed;
     background-color: #EDEDED;
@@ -19,86 +21,162 @@ body {
     height: 454px;
     animation: modalLocve ease .5s;
 }
+
 H1 {
     text-align: center;
-    
+
 }
-.input-tengoive{
+
+.input-tengoive {
     border-radius: 8px;
     width: 250px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #A5A8B1;
 }
-.modal-date{
+
+.modal-date {
     display: flex;
     margin-top: 16px;
 }
+
 .input-date-ngay {
     width: 129px;
     border-radius: 5px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #A5A8B1;
 }
+
 .input-date-han {
     width: 129px;
     border-radius: 5px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #A5A8B1;
 }
+
 .input-date-time {
     border-radius: 5px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #A5A8B1;
 }
+
 .modal-date-input-2 {
     margin-left: 32px;
 }
+
 .modal-giave {
     margin-top: 16px;
 }
+
 .input-giave {
     width: 148px;
     border-radius: 5px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #A5A8B1;
 }
+
 .input-giave2 {
     width: 100px;
     border-radius: 5px;
-    border: 1px solid #E5E5E5;
+    border: 1px solid #A5A8B1;
 }
+
 .modal-tinhtrang {
     margin-top: 16px;
-    
+
 }
+
 .modal-btn {
     margin-top: 16px;
     text-align: center;
 
 }
+
 .btn-huy {
     width: 100px;
     height: 35px;
-    border: 1px solid #FF993C ;
+    border: 1px solid #FF993C;
     background-color: white;
     color: #FF993C;
     border-radius: 5px;
     margin-right: 8px;
 }
+
 .btn-luu {
     width: 100px;
     height: 35px;
-    border: 1px solid #FF993C ;
+    border: 1px solid #FF993C;
     background-color: #FF993C;
     color: white;
     border-radius: 5px;
     margin-left: 8px;
 }
+
 @keyframes modalLocve {
-    from{
+    from {
         opacity: 0;
         transform: translateY(-100px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-span{
+
+.span-tengoive {
     color: red;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox {
+    position: relative;
+    cursor: pointer;
+}
+
+.custom-checkbox:nth-last-child(1) {
+    padding-right: 0;
+}
+
+.custom-checkbox::before {
+    content: "";
+    border: 2px solid #27AEF9;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+    display: none;
+}
+
+.custom-checkbox::after {
+    
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(34, 34, 34, 0);
+    left: 4px;
+    top: 14px;
+    margin: -8px 20px;
+    margin-left: 0;
+    border-radius: 50%;
+    transition: all 0.4s;
+}
+
+input[type="checkbox"]:checked+.custom::after {
+    background: rgba(34, 34, 34, 1) !important;
+}
+
+.thongtin {
+    margin-top: 8px;
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    color: #1E0D03;
+
+    
 }

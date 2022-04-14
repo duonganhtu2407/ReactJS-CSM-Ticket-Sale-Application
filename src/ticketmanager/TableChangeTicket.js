@@ -1,75 +1,134 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Table, Switch } from 'antd';
+import { collection, getDocs, query } from "firebase/firestore";
+import db from './Config';
 
 
+
+export const getCollections = () => {
+    const data = []
+  
+    return new Promise(async (resolve, reject) => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "Change"));
+        querySnapshot.forEach((doc) => {
+          data.push({ ...doc.data(), id: doc.id })
+  
+          if (data.length === querySnapshot.size) {
+            resolve(data)
+          }
+        })
+      } catch (error) {
+        reject(error);
+      }
+    })
+  
+  }
 const columns = [
     {
         title: 'STT',
         width: 50,
-        dataIndex: 'name',
+        dataIndex: 'STT',
         key: 'name',
         fixed: 'left',
     },
 
     {
         title: 'Số vé',
-        dataIndex: 'address',
-        key: '2',
+        dataIndex: 'SoVe',
+        key: 'SoVe',
+        width: 100,
+    },
+    {
+        title: 'Tên sự kiện',
+        dataIndex: 'TenSuKien',
+        key: 'TenSuKien',
         width: 100,
     },
     {
         title: 'Ngày sử dụng',
-        dataIndex: 'date',
-        key: '3',
+        dataIndex: 'NgaySuDung',
+        key: 'NgaySuDung',
+        render: NgaySuDung => <>{NgaySuDung.day}/{NgaySuDung.month}/{NgaySuDung.year}</>,
         width: 100,
     },
     {
         title: 'Tên loại vé',
-        dataIndex: 'address',
-        key: '4',
+        dataIndex: 'TenLoaiVe',
+        key: 'TenLoaiVe',
         width: 100,
     },
 
    
     {
         title: 'Cổng Check-In',
-        dataIndex: 'cong',
-        key: '5',
+        dataIndex: 'CongCheckIn',
+        key: 'CongCheckIn',
         width: 100,
     },
+    {
+        dataIndex: 'Status',
+        key: 'Status',
+        width: 100,
+        render: (status) => {
+          let color = ''
+          let statusName = ''
+          let font =''
+          let weigh=''
+          switch (status) {
+            case 0:
+              color = '#b8b8b8'
+              statusName = 'chưa đối soát'
+              font = 'italic'
+              weigh ='500px'
+              break
+            case 1:
+              color = '#f70c0c'
+              statusName = 'đả đối soát'
+              font = 'italic'
+              weigh ='500px'
+              break
+  
+  
+            default:
+              color = '#03AC00'
+              statusName = 'chưa đối soát'
+              font = 'italic'
+              weigh ='500px'
+          }
+          return (
+            <div
+              className='ticket-change'
+              style={{
+                color: `${color}`,
+                fontStyle:`${font}`                
+                
+              }}
+            >
+             {statusName}
+            </div>
+          )
+        },
+      },
 ];
-const d = new Date()
-const date = d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
-const data = [];
-for (let i = 1; i < 100; i++) {
-    data.push({
-        key: i,
-        name: `${i}`,
-        date: `${date}`,
-        address: `ATLT2001 ${i}`,
-        cong: `Cổng 1`
-    });
-}
+
 const TableChangeTicket = () => {
     const [fixedTop, setFixedTop] = useState(false);
+    const [list, setList] = useState([]);
+    useEffect(() => {
+        getCollections().then(res => {
+          setList(res)
+        }).catch(e => {
+          console.log(e)
+        })
+      }, [])
     return (
         <div>
             <Table
                 columns={columns}
-                dataSource={data}
+                dataSource={list}
                 
-                summary={pageData => (
-                    <Table.Summary fixed={fixedTop ? 'top' : 'bottom'}>
-                        <Table.Summary.Row>
-                            <Table.Summary.Cell index={0} colSpan={2}>
-                            </Table.Summary.Cell>
-                            <Table.Summary.Cell index={1} colSpan={8}>
-                                <Table.Summary.Cell index={8} ></Table.Summary.Cell>
-                            </Table.Summary.Cell>
-                        </Table.Summary.Row>
-                    </Table.Summary>
-                )}
-                sticky
+                
             />
         </div>
     )

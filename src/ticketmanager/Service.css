@@ -25,3 +25,17 @@
     font-weight: 500;
     width: 170px;
 }
+.ant-table-container {
+    height: 638px;
+    
+}
+.span-capnhat {
+    columns: #FF993C !important;
+}
+p {
+    color: #FF993C;
+   margin-bottom: 8px;
+}
+.bx bx-edit {
+    width: initial;
+}

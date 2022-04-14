@@ -1,100 +1,145 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { collection, getDocs, query } from "firebase/firestore";
 import { Table, Switch } from 'antd';
+import db from './Config';
+import './Service.css'
+import   'boxicons'
 
 
+export const getCollections = () => {
+    const data = []
+  
+    return new Promise(async (resolve, reject) => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "Service"));
+        querySnapshot.forEach((doc) => {
+          data.push({ ...doc.data(), id: doc.id })
+  
+          if (data.length === querySnapshot.size) {
+            resolve(data)
+          }
+        })
+      } catch (error) {
+        reject(error);
+      }
+    })
+  
+  }
 const columns = [
     {
         title: 'STT',
         width: 100,
-        dataIndex: 'name',
+        dataIndex: 'STT',
         key: 'name',
         fixed: 'left',
     },
     {
         title: 'Mã gói',
-        dataIndex: 'address',
+        dataIndex: 'MaGoi',
         key: '1',
         width: 150,
     },
     {
         title: 'Tên gói vé',
-        dataIndex: 'goive',
+        dataIndex: 'TenGoiVe',
         key: '2',
         width: 150,
     },
    
     {
         title: 'Ngày áp dụng',
-        dataIndex: 'date',
+        dataIndex: 'NgayApDung',
         key: '5',
+        render: NgayApDung =><>{NgayApDung.day}/{NgayApDung.month}/{NgayApDung.year}</>,
         width: 150,
     },
     {
         title: 'Ngày hết hạn',
-        dataIndex: 'date',
+        dataIndex: 'NgayHetHan',
         key: '6',
+        render: NgayHetHan =><>{NgayHetHan.day}/{NgayHetHan.month}/{NgayHetHan.year}</>,
         width: 150,
     },
     {
         title: 'Giá vé(VNĐ/Vé)',
-        dataIndex: 'giatien',
+        dataIndex: 'GiaVe',
         key: '3',
         width: 150,
     },
     {
         title: 'Giá combo(VNĐ/Combo)',
-        dataIndex: 'giacombo',
+        dataIndex: 'GiaCombo',
         key: '4',
         width: 200,
     },
     {
         title: 'Tình trạng',
-        dataIndex: 'tinhtrang',
+        dataIndex: 'Status',
         key: '7',
-        width: 150,
+        width: 200,
+        render: (status) => {
+            let color = ''
+            let statusName = ''
+            let bg = ''
+            switch (status) {
+              case 0:
+                color = '#03AC00'
+                statusName = ' ⬤ Đang áp dụng'
+                bg = '#DEF7E0'
+                break
+              case 1:
+                color = '#FD5959'
+                bg = '#F8EBE8'
+                statusName = '⬤ Tắt'
+                break
+              default:
+                color = '#03AC00'
+                statusName = '⬤ Chưa sử dụng'
+            }
+            return (
+              <div
+                className='ticket-status'
+                style={{
+                  backgroundColor: `${bg}`,
+                  borderColor: `${color}`,
+                  color: `${color}`,
+                }}
+              >
+               {statusName}
+              </div>
+            )
+          },
     },
     {
-        dataIndex: 'capnhat',
-        key: '8',
-        width: 150,
-    }
+        title: "",
+        dataIndex: "update",
+        key: "update",
+        render: (status) => (
+        <p className="tb__edit" onClick={{}}>
+          <i class='bx bx-edit'></i>
+          <span className='span-capnhat'>Cập nhật </span>
+        </p>
+      ),
+    },
+    
 ];
-const d = new Date()
-const date = d.getDate() + '/' + (d.getMonth() + 1) + '/' + d.getFullYear();
-const data = [];
-for (let i = 1; i < 50; i++) {
-    data.push({
-        key: i,
-        name: `${i}`,
-        date: `${date}`,
-        address: `ATLT2001 ${i}`,
-        goive:`Gói gia dình`,
-        giatien: `50.000 VNĐ`,
-        giacombo:`360.000 VNĐ`,
-        capnhat:`Cập nhật`,
-        tinhtrang:`Đã sử dụng`
-    });
-}
+
 const TableService = () => {
     const [fixedTop, setFixedTop] = useState(false);
+    const [list, setList] = useState([]);
+    useEffect(() => {
+        getCollections().then(res => {
+          setList(res)
+        }).catch(e => {
+          console.log(e)
+        })
+      }, [])
     return (
         <div>
             <Table
                 columns={columns}
-                dataSource={data}
-                scroll={{ x: 1500 }}
-                summary={pageData => (
-                    <Table.Summary fixed={fixedTop ? 'top' : 'bottom'}>
-                        <Table.Summary.Row>
-                            <Table.Summary.Cell index={0} colSpan={2}>
-                            </Table.Summary.Cell>
-                            <Table.Summary.Cell index={1} colSpan={8}>
-                                <Table.Summary.Cell index={8} ></Table.Summary.Cell>
-                            </Table.Summary.Cell>
-                        </Table.Summary.Row>
-                    </Table.Summary>
-                )}
-                sticky
+                dataSource={list}
+                
             />
         </div>
     )

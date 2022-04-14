@@ -28,13 +28,13 @@ export default class Navbar extends Component {
          <div className='logo'></div>
           <Menu className='menu-items' style={{ background: "#E5E5E5"}} defaultSelectedKeys={['2']} mode="inline">
             <Menu.Item key="1" icon={<HomeOutlined />}>
-            <NavLink to={HOME_PATH}>Trang Chủ</NavLink>
+            <NavLink className="navlink" to={HOME_PATH}>Trang Chủ</NavLink>
             </Menu.Item>
             <Menu.Item key="2" icon={<CreditCardOutlined />} >
-              <NavLink to={TICKET_PATH} exact={true}>Quản lý vé</NavLink>
+              <NavLink className="navlink" to={TICKET_PATH} exact={true}>Quản lý vé</NavLink>
             </Menu.Item>
             <Menu.Item key="3" icon={<AuditOutlined />} >
-              <NavLink to={CHANGE_TICKET_PATH}>Đối soát vé</NavLink>
+              <NavLink className="navlink" to={CHANGE_TICKET_PATH}>Đối soát vé</NavLink>
             </Menu.Item>
             <SubMenu key="sub2" icon={<SettingOutlined />} title="Gói cài đặt" >
               <Menu.Item key="4"> 
