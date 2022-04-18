@@ -45,15 +45,15 @@ export class ChangeTicket extends Component {
                         <p className='tinhtrang'>Tình trạng soát vé</p>
                         <div className='input-soatve'>
                             <div className='input-radio'>
-                                <label  className='custom'><input className='custom-input' type="radio" value="" name='locve' /><span className='margin-left' ></span>Tất cả</label>
+                                <label  className='custom'><input className='custom-input' type="radio" value="" name='locve' /><span className='check-mark' ></span></label><label className='label-check'>Tất cả</label>
 
                             </div>
                             <div className='input-radio'>
-                                <label className='custom'><input className='custom-input' type="radio" value="" name='locve'/><span className='margin-left'></span>Đã đối soát</label>
+                                <label className='custom'><input className='custom-input' type="radio" value="" name='locve'/><span className='check-mark'></span></label><label className='label-check'>Đã đối soát</label>
 
                             </div>
                             <div className='input-radio'>
-                                <label className='custom'><input  className='custom-input'type="radio" value="" name='locve'/><span className='margin-left'></span>Chưa đối soát</label>
+                                <label className='custom'><input  className='custom-input'type="radio" value="" name='locve'/><span className='check-mark'></span></label><label className='label-check'>Chưa đối soát</label>
 
                             </div>
                         </div>

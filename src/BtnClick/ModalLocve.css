@@ -92,40 +92,36 @@
         transform: translateY(0);
     }
 }
-input[type="radio"]{
+/* input[type="radio"]{
+    display: none;
+} */
+.custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #27AEF9 ;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.custom .check-mark {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #27AEF9;
+    display: inline-block;
     display: none;
 }
-.custom {
-    position: relative;
-    cursor: pointer;
+.custom input {
+    display: none;
 }
-.custom:nth-last-child(1) {
-    padding-right: 0;
-}
-.custom::before {
-    content: "";
-    border: 2px solid #27AEF9;
+.custom input:checked + .check-mark {
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
 }
-.custom::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background: rgba(34, 34, 34, 0);
-    left: 4px;
-    top: 14px;
-    margin: -8px 20px;
-    margin-left: 0;
-    border-radius: 50%;
-    transition: all 0.4s;
-}
-input[type="radio"]:checked + .custom::after{
-    background: rgba(34, 34, 34, 1);
+
+.check-mark{
+
 }
 input[type="date"]::-webkit-calendar-picker-indicator{
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="orange" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
@@ -134,5 +130,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     margin-left: 5px;
 }
 input[type="checkbox"] {
-    display: inline-block !important;
+    
+}
+.span-input{
+    margin-left: 5px;
+}
+.label-input {
+    margin-left: -33px;
 }

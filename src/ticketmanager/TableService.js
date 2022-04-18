@@ -25,7 +25,10 @@ export const getCollections = () => {
     })
   
   }
-const columns = [
+
+
+const TableService = (props) => {
+  const columns = [
     {
         title: 'STT',
         width: 100,
@@ -37,13 +40,13 @@ const columns = [
         title: 'Mã gói',
         dataIndex: 'MaGoi',
         key: '1',
-        width: 150,
+        width: 200,
     },
     {
         title: 'Tên gói vé',
         dataIndex: 'TenGoiVe',
         key: '2',
-        width: 150,
+        width: 200,
     },
    
     {
@@ -115,16 +118,18 @@ const columns = [
         dataIndex: "update",
         key: "update",
         render: (status) => (
-        <p className="tb__edit" onClick={{}}>
+        <p className="tb__edit" onClick={handelModalCapnhat}>
           <i class='bx bx-edit'></i>
-          <span className='span-capnhat'>Cập nhật </span>
+          <span className='span-capnhat' >Cập nhật </span>
         </p>
       ),
     },
     
 ];
-
-const TableService = () => {
+  
+const handelModalCapnhat = () => {
+  props.openshowCapnhat()
+}
     const [fixedTop, setFixedTop] = useState(false);
     const [list, setList] = useState([]);
     useEffect(() => {

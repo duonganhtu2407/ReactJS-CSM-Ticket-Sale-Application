@@ -14,6 +14,7 @@ import Navbar from './ticketmanager/Navbar';
 import { CHANGE_TICKET_PATH, HOME_PATH, SERVICE_PATH, TICKET_PATH } from './ticketmanager/routes';
 import Service from './ticketmanager/Service';
 import Tickets from './ticketmanager/Tickets';
+import ModalCapnhat from './BtnClick/ModalCapnhat';
 function App() {
   const [isShow, setShow] = useState(false);
   const onGetShow = () => {
@@ -29,6 +30,13 @@ function App() {
   const closegetShowThem =() => {
     setShowThem(false)
   }
+  const [isShowCapnhat, setShowCapnhat] = useState(false);
+  const onGetShowCapnhat = () => {
+    setShowCapnhat(true);
+  }
+  const closegetShowCapnhat =() => {
+    setShowCapnhat(false)
+  }
 
   return (
     <Navbar>
@@ -36,7 +44,7 @@ function App() {
         <Route path={HOME_PATH} element={<HomePage />} />
         <Route path={TICKET_PATH} element={<Tickets openshow={onGetShow} />} />
         <Route path={CHANGE_TICKET_PATH} element={<ChangeTicket />} />
-        <Route path={SERVICE_PATH} element={<Service openshowthem={onGetShowThem} />} />
+        <Route path={SERVICE_PATH} element={<Service openshowthem={onGetShowThem} openshowCapnhat={onGetShowCapnhat}  />} />
       </Routes>
       {isShow && (
         <ModalLocve closeshow={closegetShow} />
@@ -44,6 +52,10 @@ function App() {
       {isShowThem && (
         <ModalThemVe closeshowThem={closegetShowThem} />
       )}
+      {isShowCapnhat && (
+        <ModalCapnhat closegetShowCapnhat={closegetShowCapnhat} />
+      )}
+      
       
     </Navbar>
 

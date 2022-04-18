@@ -162,4 +162,10 @@ span.ant-menu-title-content {
 .ticket-change{
     font-weight: 500;
 }
+.image{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background:url(../image/Frame54.png) ;
+}
 

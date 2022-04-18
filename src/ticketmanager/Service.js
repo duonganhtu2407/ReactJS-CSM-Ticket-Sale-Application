@@ -1,8 +1,9 @@
 import { Layout, Menu } from 'antd';
-import React from 'react';
+import React,{useState} from 'react';
 import TableView from './TableView';
 import "./Service.css"
 import TableService from './TableService';
+import ModalCapnhat from '../BtnClick/ModalCapnhat';
   
   
   
@@ -12,9 +13,17 @@ import TableService from './TableService';
   
   
   export default function Service(props) {
+    const [isShowCapnhat, setShowCapnhat] = useState(false);
+    const onGetShowCapnhat = () => {
+    setShowCapnhat(true);
+    }
+    const closegetShowCapnhat =() => {
+    setShowCapnhat(false)
+    }
     const handleOpenModelThem = () => {
       props.openshowthem()
     }
+
     return (
       <Content style={{ margin: '0 16px' }}>
         <h2 className='h1-style'>Danh sách gói dịch vụ</h2>
@@ -26,7 +35,10 @@ import TableService from './TableService';
           </div>
         </div>
         <div className="site-layout-background" >   
-          <TableService />
+          <TableService openshowCapnhat={onGetShowCapnhat}/>
+          {isShowCapnhat && (
+          <ModalCapnhat closeshowCapnhat={closegetShowCapnhat} />
+          )}
         </div>
       </Content>
     )

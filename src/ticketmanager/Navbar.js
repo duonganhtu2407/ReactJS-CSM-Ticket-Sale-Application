@@ -54,9 +54,9 @@ export default class Navbar extends Component {
               </Menu.Item>
               <Menu.Item key="7" icon={<BellOutlined />}>
               </Menu.Item>
-              <Menu.Item key="8" icon={<TeamOutlined />}>
-              </Menu.Item>
-            </Menu>  
+              <div className='image'></div> 
+            </Menu> 
+            
           </div>
         {this.props.children}
         </Layout>
